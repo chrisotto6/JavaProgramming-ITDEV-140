@@ -1,0 +1,189 @@
+Wed Dec 10 08:33:06 GMT-06:00 2014 : Apache Derby Network Server - 10.8.2.2 - (1181258) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Wed Dec 10 08:33:07 GMT-06:00 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.2.2 - (1181258): instance a816c00e-014a-349e-2267-00006bcc1e5f 
+on database directory C:\Users\1019491\.netbeans-derby\List  with class loader sun.misc.Launcher$AppClassLoader@6d9bf996 
+Loaded from file:/C:/Program%20Files/Java/jdk1.7.0_17/db/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_17-b02
+user.dir=C:\Program Files\Java\jdk1.7.0_17\db
+derby.system.home=C:\Users\1019491\.netbeans-derby
+Database Class Loader started - derby.database.classpath=''
+Wed Dec 10 08:33:08 GMT-06:00 2014 Thread[DRDAConnThread_3,5,main] (XID = 719), (SESSIONID = 0), (DATABASE = List), (DRDAID = {1}), Cleanup action starting
+java.sql.SQLNonTransientConnectionException: Connection authentication failure occurred.  Reason: Invalid authentication..
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.checkUserCredentials(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection30.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection40.<init>(Unknown Source)
+	at org.apache.derby.jdbc.Driver40.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.EmbeddedDriver.connect(Unknown Source)
+	at org.apache.derby.impl.drda.Database.makeConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.getConnFromDatabaseName(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.verifyUserIdPassword(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseSECCHK(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseDRDAConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+Caused by: java.sql.SQLException: Connection authentication failure occurred.  Reason: Invalid authentication..
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	... 19 more
+============= begin nested exception, level (1) ===========
+java.sql.SQLException: Connection authentication failure occurred.  Reason: Invalid authentication..
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.wrapArgsForTransportAcrossDRDA(Unknown Source)
+	at org.apache.derby.impl.jdbc.SQLExceptionFactory40.getSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.newEmbedSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.newSQLException(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.checkUserCredentials(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection30.<init>(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedConnection40.<init>(Unknown Source)
+	at org.apache.derby.jdbc.Driver40.getNewEmbedConnection(Unknown Source)
+	at org.apache.derby.jdbc.InternalDriver.connect(Unknown Source)
+	at org.apache.derby.jdbc.EmbeddedDriver.connect(Unknown Source)
+	at org.apache.derby.impl.drda.Database.makeConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.getConnFromDatabaseName(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.verifyUserIdPassword(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseSECCHK(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.parseDRDAConnection(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+============= end nested exception, level (1) ===========
+Cleanup action completed
+Wed Dec 10 08:33:08 GMT-06:00 2014 Thread[DRDAConnThread_3,5,main] (DATABASE = List), (DRDAID = {1}), Connection authentication failure occurred.  Reason: Invalid authentication..
+Wed Dec 10 09:07:36 GMT-06:00 2014 Thread[DRDAConnThread_3,5,main] (XID = 904), (SESSIONID = 2), (DATABASE = List), (DRDAID = ????????.??-4469821211943219043{2}), Cleanup action starting
+Wed Dec 10 09:07:36 GMT-06:00 2014 Thread[DRDAConnThread_3,5,main] (XID = 904), (SESSIONID = 2), (DATABASE = List), (DRDAID = ????????.??-4469821211943219043{2}), Failed Statement is: SELECT * FROM LIST
+java.lang.ArrayIndexOutOfBoundsException
+	at java.lang.System.arraycopy(Native Method)
+	at org.apache.derby.impl.sql.execute.ScrollInsensitiveResultSet.addRowToHashTable(Unknown Source)
+	at org.apache.derby.impl.sql.execute.ScrollInsensitiveResultSet.getNextRowFromSource(Unknown Source)
+	at org.apache.derby.impl.sql.execute.ScrollInsensitiveResultSet.getNextRowCore(Unknown Source)
+	at org.apache.derby.impl.sql.execute.BasicNoPutResultSetImpl.getNextRow(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedResultSet.movePosition(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedResultSet.next(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.writeFDODTA(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.writeQRYDTA(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+Cleanup action completed
+Wed Dec 10 09:07:36 GMT-06:00 2014 Thread[DRDAConnThread_3,5,main] (DATABASE = List), (DRDAID = ????????.??-4469821211943219043{2}), null
+Wed Dec 10 09:07:36 GMT-06:00 2014 : null
+java.lang.NullPointerException
+	at org.apache.derby.impl.drda.DRDAConnThread.writePBSD(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+Wed Dec 10 09:07:36 GMT-06:00 2014 Thread[DRDAConnThread_3,5,main] (DATABASE = List), (DRDAID = ????????.??-4469821211943219043{2}), Execution failed because of Permanent Agent Error: SVRCOD = 40; RDBNAM = List; diagnostic msg = null
+Wed Dec 10 09:07:36 GMT-06:00 2014 : Execution failed because of Permanent Agent Error: SVRCOD = 40; RDBNAM = List; diagnostic msg = null
+org.apache.derby.impl.drda.DRDAProtocolException: Execution failed because of Permanent Agent Error: SVRCOD = 40; RDBNAM = List; diagnostic msg = null
+	at org.apache.derby.impl.drda.DRDAProtocolException.newAgentError(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.sendUnexpectedException(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.handleException(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+Wed Dec 10 09:07:36 GMT-06:00 2014 : null
+java.lang.NullPointerException
+	at org.apache.derby.impl.drda.DRDAConnThread.writePBSD(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+Wed Dec 10 09:07:55 GMT-06:00 2014 Thread[DRDAConnThread_4,5,main] (XID = 917), (SESSIONID = 14), (DATABASE = List), (DRDAID = ????????.???-665405426719924352{8}), Cleanup action starting
+Wed Dec 10 09:07:55 GMT-06:00 2014 Thread[DRDAConnThread_4,5,main] (XID = 917), (SESSIONID = 14), (DATABASE = List), (DRDAID = ????????.???-665405426719924352{8}), Failed Statement is: select * from COTTO.LIST
+java.lang.ArrayIndexOutOfBoundsException
+	at java.lang.System.arraycopy(Native Method)
+	at org.apache.derby.impl.sql.execute.ScrollInsensitiveResultSet.addRowToHashTable(Unknown Source)
+	at org.apache.derby.impl.sql.execute.ScrollInsensitiveResultSet.getNextRowFromSource(Unknown Source)
+	at org.apache.derby.impl.sql.execute.ScrollInsensitiveResultSet.getNextRowCore(Unknown Source)
+	at org.apache.derby.impl.sql.execute.BasicNoPutResultSetImpl.getNextRow(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedResultSet.movePosition(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedResultSet.next(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.writeFDODTA(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.writeQRYDTA(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+Cleanup action completed
+Wed Dec 10 09:07:55 GMT-06:00 2014 Thread[DRDAConnThread_4,5,main] (DATABASE = List), (DRDAID = ????????.???-665405426719924352{8}), null
+Wed Dec 10 09:07:55 GMT-06:00 2014 : null
+java.lang.NullPointerException
+	at org.apache.derby.impl.drda.DRDAConnThread.writePBSD(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+Wed Dec 10 09:07:55 GMT-06:00 2014 Thread[DRDAConnThread_4,5,main] (DATABASE = List), (DRDAID = ????????.???-665405426719924352{8}), Execution failed because of Permanent Agent Error: SVRCOD = 40; RDBNAM = List; diagnostic msg = null
+Wed Dec 10 09:07:55 GMT-06:00 2014 : Execution failed because of Permanent Agent Error: SVRCOD = 40; RDBNAM = List; diagnostic msg = null
+org.apache.derby.impl.drda.DRDAProtocolException: Execution failed because of Permanent Agent Error: SVRCOD = 40; RDBNAM = List; diagnostic msg = null
+	at org.apache.derby.impl.drda.DRDAProtocolException.newAgentError(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.sendUnexpectedException(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.handleException(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+Wed Dec 10 09:07:55 GMT-06:00 2014 : null
+java.lang.NullPointerException
+	at org.apache.derby.impl.drda.DRDAConnThread.writePBSD(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+Wed Dec 10 09:08:02 GMT-06:00 2014 Thread[DRDAConnThread_5,5,main] (XID = 932), (SESSIONID = 16), (DATABASE = List), (DRDAID = ????????.???-578711133893027856{9}), Cleanup action starting
+Wed Dec 10 09:08:02 GMT-06:00 2014 Thread[DRDAConnThread_5,5,main] (XID = 932), (SESSIONID = 16), (DATABASE = List), (DRDAID = ????????.???-578711133893027856{9}), Failed Statement is: select * from COTTO.LIST
+java.lang.ArrayIndexOutOfBoundsException
+	at java.lang.System.arraycopy(Native Method)
+	at org.apache.derby.impl.sql.execute.ScrollInsensitiveResultSet.addRowToHashTable(Unknown Source)
+	at org.apache.derby.impl.sql.execute.ScrollInsensitiveResultSet.getNextRowFromSource(Unknown Source)
+	at org.apache.derby.impl.sql.execute.ScrollInsensitiveResultSet.getNextRowCore(Unknown Source)
+	at org.apache.derby.impl.sql.execute.BasicNoPutResultSetImpl.getNextRow(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedResultSet.movePosition(Unknown Source)
+	at org.apache.derby.impl.jdbc.EmbedResultSet.next(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.writeFDODTA(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.writeQRYDTA(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+Cleanup action completed
+Wed Dec 10 09:08:02 GMT-06:00 2014 Thread[DRDAConnThread_5,5,main] (DATABASE = List), (DRDAID = ????????.???-578711133893027856{9}), null
+Wed Dec 10 09:08:02 GMT-06:00 2014 : null
+java.lang.NullPointerException
+	at org.apache.derby.impl.drda.DRDAConnThread.writePBSD(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+Wed Dec 10 09:08:02 GMT-06:00 2014 Thread[DRDAConnThread_5,5,main] (DATABASE = List), (DRDAID = ????????.???-578711133893027856{9}), Execution failed because of Permanent Agent Error: SVRCOD = 40; RDBNAM = List; diagnostic msg = null
+Wed Dec 10 09:08:02 GMT-06:00 2014 : Execution failed because of Permanent Agent Error: SVRCOD = 40; RDBNAM = List; diagnostic msg = null
+org.apache.derby.impl.drda.DRDAProtocolException: Execution failed because of Permanent Agent Error: SVRCOD = 40; RDBNAM = List; diagnostic msg = null
+	at org.apache.derby.impl.drda.DRDAProtocolException.newAgentError(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.sendUnexpectedException(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.handleException(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+Wed Dec 10 09:08:02 GMT-06:00 2014 : null
+java.lang.NullPointerException
+	at org.apache.derby.impl.drda.DRDAConnThread.writePBSD(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
+	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
+----------------------------------------------------------------
+Wed Dec 10 09:08:19 GMT-06:00 2014:
+Shutting down instance a816c00e-014a-349e-2267-00006bcc1e5f on database directory C:\Users\1019491\.netbeans-derby\List with class loader sun.misc.Launcher$AppClassLoader@6d9bf996 
+Wed Dec 10 09:08:19 GMT-06:00 2014 Thread[DRDAConnThread_6,5,main] (DATABASE = List), (DRDAID = {10}), Database 'List' shutdown.
+----------------------------------------------------------------
+Wed Dec 10 09:08:34 GMT-06:00 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.2.2 - (1181258): instance a05c0120-014a-349e-2267-00006bcc1e5f 
+on database directory C:\Users\1019491\.netbeans-derby\LIST  with class loader sun.misc.Launcher$AppClassLoader@6d9bf996 
+Loaded from file:/C:/Program%20Files/Java/jdk1.7.0_17/db/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_17-b02
+user.dir=C:\Program Files\Java\jdk1.7.0_17\db
+derby.system.home=C:\Users\1019491\.netbeans-derby
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Wed Dec 10 09:08:36 GMT-06:00 2014:
+Shutting down instance a05c0120-014a-349e-2267-00006bcc1e5f on database directory C:\Users\1019491\.netbeans-derby\LIST with class loader sun.misc.Launcher$AppClassLoader@6d9bf996 
+Wed Dec 10 09:08:36 GMT-06:00 2014 Thread[DRDAConnThread_6,5,main] (DATABASE = LIST), (DRDAID = {12}), Database 'LIST' shutdown.
+----------------------------------------------------------------
+Wed Dec 10 09:08:39 GMT-06:00 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.2.2 - (1181258): instance db5601b1-014a-349e-2267-00006bcc1e5f 
+on database directory C:\Users\1019491\.netbeans-derby\LIST  with class loader sun.misc.Launcher$AppClassLoader@6d9bf996 
+Loaded from file:/C:/Program%20Files/Java/jdk1.7.0_17/db/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_17-b02
+user.dir=C:\Program Files\Java\jdk1.7.0_17\db
+derby.system.home=C:\Users\1019491\.netbeans-derby
+Database Class Loader started - derby.database.classpath=''
